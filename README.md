@@ -32,9 +32,9 @@ Personal package archives, essentially, are packages reserved for _non-standard_
 > The answer lies in the update procedure. If you install a software using a DEB package, there is no **guarantee that the installed software will be updated to a newer version when you run `sudo apt update` && `sudo apt upgrade`**.
 >
 > It’s because the apt upgrade procedure relies on the sources.list. If there is no entry for a software, it doesn’t get the update via the standard software updater.
-
+>
 > So does it mean software installed using DEB never gets an update? No, not really. It depends on how the package was created.
-
+>
 > Some developers automatically add an entry to the sources.list and then it is updated like a regular software. Google Chrome is one such example.
 
 ## Installing `nodejs`
