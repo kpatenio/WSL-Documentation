@@ -38,7 +38,7 @@ Personal package archives, essentially, are packages reserved for _non-standard_
 > Some developers automatically add an entry to the sources.list and then it is updated like a regular software. Google Chrome is one such example.
 
 ## Installing `nodejs`
-NodeJS can be installed multiple ways, including via package managers like npm (although what version of node you get upon installation depends on the package manager you are using). This method assumes we are installing NodeJS via the terminal only.
+NodeJS can be installed multiple ways, including via package managers like npm (although what version of node you get upon installation depends on the package manager you are using). This method assumes we are installing NodeJS via `apt` only.
 
 For the full and official documentation, see [here](https://github.com/nodesource/distributions/blob/master/README.md). 
 
@@ -59,7 +59,7 @@ I installed `npm` using the following commands:
 1. `sudo apt install npm`
 2. `sudo npm install npm@latest -g`
 
-For some reason, I did not get the latest version of npm. I had to run the second command to upgrade to the latest verseion.
+For some reason, I did not get the latest version of npm. I had to run the second command to upgrade to the latest version.
 
 ### Using PPAs
 There are several good resource explaining the steps for installing npm using PPAs, like [this](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04) and [this](https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/).
