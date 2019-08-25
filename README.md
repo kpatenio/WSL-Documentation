@@ -46,7 +46,7 @@ For the full and official documentation, see [here](https://github.com/nodesourc
 ### Node 10.x
 ```
 # For ubuntu
-curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 Note that `-y` allows us to say yes in the "confirmation" prompt that appears whenever we try to install a program using `apt`.
@@ -59,9 +59,9 @@ Note that `-y` allows us to say yes in the "confirmation" prompt that appears wh
 >
 > For this reason, it's best to download the script first, inspect it line-by-line to make sure it isn't upto any funny buisness, the run it.
 >
->    curl -sL https://deb.nodesource.com/setup_10.x -o setup_10.x.sh
->    less setup_10.x.sh   # take a look at the file
->    sudo -E bash setup_10.x.sh  # Now we can run the script
+>     curl -sL https://deb.nodesource.com/setup_10.x -o setup_10.x.sh
+>     less setup_10.x.sh   # take a look at the file
+>     sudo -E bash setup_10.x.sh  # Now we can run the script
 
 #### Personal Experience
 I initially ran `sudo apt install nodejs`, but this gave me node version 8.x.
