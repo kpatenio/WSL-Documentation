@@ -73,7 +73,7 @@ The reason it installs ~8.x is because...
  3. The `Universe` repository **locks versions** for each Ubuntu release. This is so that if you install say Ubuntu 18.04 LTS on many different , you get a consistent set of packages, and have a lower likelihood of things breaking due to updates.
  4. [The version of NodeJS locked for Ubuntu 18.04 is NodeJS 8.x](https://packages.ubuntu.com/bionic/nodejs)
 
-To update to a newer version, I had to use [nvm](#installing-nvm). To use `nvm` however, I also had to install [npm](#installing-npm). (Ed: that's so weird... `nvm` is a series of Bash scripts; it should _not_ require npm at all! 🤔🤔🤔)
+To update to a newer version, I had to use [nvm](#installing-nvm). To use `nvm` however, I also had to install [npm](#installing-npm). (Comment from Eddie: that's so weird... `nvm` is a series of Bash scripts; it should _not_ require npm at all! 🤔🤔🤔)
 
 ## Installing `npm`
 ### Using no PPAs
