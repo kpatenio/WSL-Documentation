@@ -91,7 +91,13 @@ There are several good resource explaining the steps for installing npm using PP
 Note about `apt-get`: see [here](https://itsfoss.com/apt-vs-apt-get-difference/).
 
 ## Installing `nvm`
-Official documentation can be found [here](https://gist.github.com/d2s/372b5943bce17b964a79#installing-nodejs-with-nvm-to-linux--macos--wsl).
+Official documentation can be found [here](https://gist.github.com/d2s/372b5943bce17b964a79#installing-nodejs-with-nvm-to-linux--macos--wsl). Also see [Installing nodejs](installing-nodejs).
 
 ### Python
-TODO
+By default, Bionic Beaver comes with [Python 3.6](https://packages.ubuntu.com/bionic/python/). This is for compatibility reasons. To install Python 3.7, I had to install it separately. There are several tutorials that [show how to do this](https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/). However, considering that I did not want to use PPAs, I instead just ran the following:
+
+```
+sudo apt install python3.7
+```
+
+By doing this, I was able to get _some_ Python. I say "some" because it did not install other Python 3.7 compatible libraries that were already found on my system via Python 3.6. For example, I had to install `pip` serparately for `3.7`. Admittedly, I don't recall how I got `pip` for that specific version hehe. There are several resources however that show how to do so. For example, check out this [SO question here!](https://stackoverflow.com/questions/54633657/how-to-install-pip-for-python-3-7-on-ubuntu-18).
