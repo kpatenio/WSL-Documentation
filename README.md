@@ -93,7 +93,7 @@ Note about `apt-get`: see [here](https://itsfoss.com/apt-vs-apt-get-difference/)
 ## Installing `nvm`
 Official documentation can be found [here](https://gist.github.com/d2s/372b5943bce17b964a79#installing-nodejs-with-nvm-to-linux--macos--wsl). Also see [Installing nodejs](installing-nodejs).
 
-### Python
+## Python
 By default, Bionic Beaver comes with [Python 3.6](https://packages.ubuntu.com/bionic/python/). This is for compatibility reasons. To install Python 3.7, I had to install it separately. There are several tutorials that [show how to do this](https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/). However, considering that I did not want to use PPAs, I instead just ran the following:
 
 ```
