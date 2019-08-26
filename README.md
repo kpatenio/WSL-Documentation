@@ -4,7 +4,7 @@ This is a repository containing personal notes, which will be based on my own ex
 
 ## Personal Setup
 - Windows 10 Home (1903)
-- WSL 1.0 - Ubuntu 18.04.2 LTS
+- WSL 1.0 - Ubuntu 18.04.2 LTS “[Bionic Beaver](http://releases.ubuntu.com/18.04/)”
 
 For the time being, I will not be using [PPAs](#PPAs) to install software.
 
@@ -38,7 +38,8 @@ Personal package archives, essentially, are packages reserved for _non-standard_
 > Some developers automatically add an entry to the sources.list and then it is updated like a regular software. Google Chrome is one such example.
 
 ## Installing `nodejs`
-NodeJS can be installed multiple ways, including via package managers like npm (although what version of node you get upon installation depends on the package manager you are using). This method assumes we are installing NodeJS via `apt` only.
+
+NodeJS can be installed multiple ways, including via package managers (although what version of node you get upon installation depends on the package manager you are using and its package index). This method assumes we are installing NodeJS via `apt` only.
 
 For the full and official documentation, see [here](https://github.com/nodesource/distributions/blob/master/README.md). 
 
@@ -50,8 +51,29 @@ sudo apt-get install -y nodejs
 ```
 Note that `-y` allows us to say yes in the "confirmation" prompt that appears whenever we try to install a program using `apt`.
 
+> ⚠️ **Danger** ⚠️: installing software via `curl -sL https://example.com/some-script.sh | sudo -E bash -` means you're
+> allowing an external script (e.g., <https://deb.nodesource.com/setup_10.x>) to run on your computer with `sudo`, which
+> usually means, it has **full control** over your system and its data. **Only do this if you 100% trust the source of the script** and if you can **verify its authenticity**.
+>
+> A malicious user could literally write `rm -rf --no-preserve-root /` and wipe your computer this way! 😵💀
+>
+> For this reason, it's best to download the script first, inspect it line-by-line to make sure it isn't upto any funny buisness, the run it.
+>
+>     curl -sL https://deb.nodesource.com/setup_10.x -o setup_10.x.sh
+>     less setup_10.x.sh   # take a look at the file
+>     sudo -E bash setup_10.x.sh  # Now we can run the script
+
 #### Personal Experience
-I initially ran `sudo apt install nodejs`, but this gave me node version 8.x. To update to a newer version, I had to use [nvm](#installing-nvm). To use `nvm` however, I also had to install [npm](#installing-npm).
+I initially ran `sudo apt install nodejs`, but this gave me node version 8.x.
+
+The reason it installs ~8.x is because...
+
+ 1. apt consults its package index
+ 2. the package index finds the package `nodejs` in the `Universe` respository.
+ 3. The `Universe` repository **locks versions** for each Ubuntu release. This is so that if you install say Ubuntu 18.04 LTS on many different , you get a consistent set of packages, and have a lower likelihood of things breaking due to updates.
+ 4. [The version of NodeJS locked for Ubuntu 18.04 is NodeJS 8.x](https://packages.ubuntu.com/bionic/nodejs)
+
+To update to a newer version, I had to use [nvm](#installing-nvm). To use `nvm` however, I also had to install [npm](#installing-npm). (Ed: that's so weird... `nvm` is a series of Bash scripts; it should _not_ require npm at all! 🤔🤔🤔)
 
 ## Installing `npm`
 ### Using no PPAs
@@ -59,7 +81,9 @@ I installed `npm` using the following commands:
 1. `sudo apt install npm`
 2. `sudo npm install npm@latest -g`
 
-For some reason, I did not get the latest version of npm. I had to run the second command to upgrade to the latest version.
+I did not get the latest version of npm—the version locked for [Ubuntu Bionic is 3.5.2](https://packages.ubuntu.com/bionic/npm). I had to run the second command to upgrade to the latest version.
+
+`npm` runs _in_ `nodejs`. Hence, a required package to install `npm` is `nodejs`. You can see all of `npm`'s dependent packages on the Ubunutu 18.04 Bionic's package page for `npm`: <https://packages.ubuntu.com/bionic/npm#pdeps>
 
 ### Using PPAs
 There are several good resource explaining the steps for installing npm using PPAs, like [this](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04) and [this](https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/).
